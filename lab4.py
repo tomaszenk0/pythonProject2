@@ -81,3 +81,4 @@ print("Koszt: "+nowy.ile_kosztuje()+" zl")
 
         for i in ilosc:
 
+
