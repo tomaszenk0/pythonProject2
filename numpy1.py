@@ -427,6 +427,78 @@ plt.scatter(x, y, color='red', label='Wartości punktów')
 plt.legend()
 plt.show()
 
+#Zdanie 2
+
+#Zadanie 3
+import pandas as pd
+
+# Wczytanie danych do ramki danych
+df = pd.read_csv('glass.data', header=None, names=['Id number', 'Refractive index', 'Sodium', 'Magnesium', 'Aluminum', 'Silicon', 'Potassium', 'Calcium', 'Barium', 'Iron', 'Type of glass'])
+
+# Wybór 100 wierszy losowo bez powtarzania
+random_sample = df.sample(n=100, replace=False)
+
+# Grupowanie po kolumnie 'Type of glass'
+grouped = random_sample.groupby('Type of glass')
+
+# Obliczanie procentowego zużycia aluminium
+aluminum_percentages = grouped['Aluminum'].mean() / df['Aluminum'].mean() * 100
+
+# Wykres kołowy
+aluminum_percentages.plot.pie(autopct='%1.1f%%')
+
+#Zadanie 4
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Wczytanie danych
+data = pd.read_csv("glass.data", header=None)
+data.columns = [
+    "Id number",
+    "Refractive index",
+    "Sodium",
+    "Magnesium",
+    "Aluminum",
+    "Silicon",
+    "Potassium",
+    "Calcium",
+    "Barium",
+    "Iron",
+    "Type of glass",
+]
+
+# Obliczenie ilości wystąpień każdego rodzaju szkła
+glass_counts = data["Type of glass"].value_counts()
+
+# Ustawienie stylu wykresu na podstawowy
+sns.set_style("whitegrid")
+
+# Wygenerowanie wykresu słupkowego
+plt.figure(figsize=(10, 6))
+sns.barplot(x=glass_counts.index, y=glass_counts.values)
+
+# Dodanie etykiet osi, legendy i tytułu wykresu
+plt.xlabel("Rodzaj szkła")
+plt.ylabel("Ilość")
+plt.title("Ilość każdego rodzaju szkła")
+plt.xticks(rotation=45)
+
+# Zapisanie wykresu do pliku PNG
+plt.savefig("imię_nazwisko_nr_zadania.png", dpi=300)
+
+# Wyświetlenie wykresu
+plt.show()
+
+
+
+
+
+======================================================================================================================================
+
+
+
+
 Grupa 3 zestaw B
 #Zadanie 1
 import numpy as np
@@ -441,4 +513,26 @@ plt.xlim(-3, 5)
 plt.legend()
 plt.title('Wykres funkcji f(x)')
 plt.show()
+
+#Zadanie 2
+
+#Zadanie 3
+import pandas as pd
+
+# Wczytanie pliku do ramki danych
+data = pd.read_csv('glass.data', header=None)
+
+# Utworzenie nowej ramki danych z wierszami, gdzie typ szkła równa się 6 lub 7
+filtered_data = data[data[10].isin([6, 7])]
+
+# Grupowanie danych po kolumnie "Type of glass" w nowej ramce danych
+grouped_data = filtered_data.groupby(10).size()
+
+# Tworzenie wykresu kołowego
+grouped_data.plot(kind='pie', autopct='%.2f%%')
+
+# Wyświetlenie wykresu
+plt.show()
+
+# SZYMI ZOBACZ CZY TO DZIALA I ODPISZ TUTAJ
 
