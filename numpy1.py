@@ -409,3 +409,36 @@ print('ZADANIE 4')
 # plot.set(title='Średnie Wartośći Alkoholu')
 #
 # plt.show()
+
+Grupa 3 zestaw A
+#Zadanie 1
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-3, 5, 25)
+y = (8*x**2)/4 + np.cos(x)
+plt.plot(x, y, label='f(x) = (8*x**2)/4 + cos(x)')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.title('Wykres funkcji f(x)')
+plt.legend()
+plt.xlim(-3, 5)
+plt.scatter(x, y, color='red', label='Wartości punktów')
+plt.legend()
+plt.show()
+
+Grupa 3 zestaw B
+#Zadanie 1
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(-3, 5, 0.3)
+y = (x**2 + 3*x) / 5 + np.sin(x)
+plt.plot(x, y, label='f(x)=(x^2+3x)/5 + sin(x)')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.xlim(-3, 5)
+plt.legend()
+plt.title('Wykres funkcji f(x)')
+plt.show()
+
