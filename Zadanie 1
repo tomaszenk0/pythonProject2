@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from PIL import Image
+
+#Zadanie 1
+
+x =np.arange(-5,8,0.1)
+
+a=(np.sin(x)+(x**2))/np.cos(x**2)
+plt.plot(x, a,'g--',label="f(x)=(sin(x)+x^2)/cos(x^2)")
+
+plt.xlabel('x')
+plt.ylabel('f(x)')
+
+plt.axis([-4, 7, -400, 600])
+
+
+plt.legend(loc='lower left')
+
+plt.title('Wykres funkcji f(x) = cos(x)/x^2 dla x[-5,8]')
+
+plt.show()
